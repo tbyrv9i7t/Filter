@@ -58,9 +58,10 @@ async def groups_broadcast(bot, message):
         pti, sh = await broadcast_messages(int(chat['id']), b_msg)
         if pti:
             success += 1
-        elif sh:
-            failed += 1
-            done += 1
+        elif pti == False:
+            if sh == "Error":
+                failed += 1
+        done += 1
         await asyncio.sleep(2)
         if not done % 20:
             await sts.edit(f"Broadcast in progress:\n\nTotal Groups {total_chats}\nCompleted: {done} / {total_chats}\nSuccess: {success}\nFailed: {failed}")    
