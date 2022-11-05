@@ -11,7 +11,7 @@ def is_enabled(value, default):
         return default
 
 # Bot information
-SESSION = environ.get('SESSION', 'Media_search')
+SESSION = environ.get('SESSION', 'Media_Search')
 API_ID = int(environ['API_ID'])
 API_HASH = environ['API_HASH']
 BOT_TOKEN = environ['BOT_TOKEN']
@@ -19,8 +19,8 @@ BOT_TOKEN = environ['BOT_TOKEN']
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
-STICKERS = (environ.get('STICKERS', 'CAACAgIAAxkBAAEGSVBjYi2tJsEFz90-m6UdgHDU-ZIFcAAC0wADVp29CvUyj5fVEvk9KgQ CAACAgIAAxkBAAEGSVJjYi3IVN8hLoGkM3nis2Xa72zXowACGAADDbbSGX671giQDJU8KgQ CAACAgIAAxkBAAEGSVRjYi3lVy54jDR-JqupHnSc9s1ZbQACVAADQbVWDGq3-McIjQH6KgQ CAACAgIAAxkBAAEGSVZjYi5fWBPUblD7kAgasKQzjxgqsQACxgEAAhZCawpKI9T0ydt5RyoE CAACAgIAAxkBAAEGSVhjYi7dRg1zGr2aKH60JKsmQ7n8JwACAQEAAladvQoivp8OuMLmNCoE')).split()
-PICS = (environ.get('PICS', 'https://telegra.ph/file/fa8b1117b0cce43104744.jpg https://telegra.ph/file/3d90cb7bf2c58b9e5ef69.jpg https://telegra.ph/file/08a3619fe56d7488409a9.jpg https://telegra.ph/file/61b090f4b0587dbc2897a.jpg https://telegra.ph/file/fb899b43cbac27e4977bd.jpg')).split()
+STICKERS = (environ.get('STICKERS', 'CAACAgIAAxkBAAEGUXdjZlg70pKyL3ciahu5T8GL-5tbeAACBQADwDZPE_lqX5qCa011KwQ')).split()
+PICS = (environ.get('PICS', 'https://telegra.ph/file/6cdc6dee747e610adc994.jpg')).split()
 
 # Admins, Channels & Users
 ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '').split()]
