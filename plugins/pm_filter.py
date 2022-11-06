@@ -366,17 +366,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton(
-                        text="YES", callback_data="autofilter_delete"
-                    )
-                ],
-                [
-                    InlineKeyboardButton(
-                        text="CANCEL", callback_data="close_data"
-                    )
-                ],
+                    InlineKeyboardButton("YES", url='https://t.me/SL_Auto_Filter_Bot")
+                ]
             ]
-        ),
+        )
+
         try:
             if AUTH_CHANNEL and not await is_subscribed(client, query):
                 await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
@@ -420,10 +414,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f_caption = f_caption
         if f_caption is None:
             f_caption = f"{title}"
-        buttons = [[
-            InlineKeyboardButton('◀️ Back', callback_data='start')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton("YES", url='https://t.me/SL_Auto_Filter_Bot")
+                ]
+            ]
+        )
         await query.answer()
         await client.send_cached_media(
             chat_id=query.from_user.id,
