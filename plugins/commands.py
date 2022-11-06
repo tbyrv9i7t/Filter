@@ -233,7 +233,11 @@ async def start(client, message):
         chat_id=message.from_user.id,
         file_id=file_id,
         caption=f_caption,
-        reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton('sᴜʙsᴄʀɪʙᴇ', url='youtube.com/OpusTechz') ] ] ),
+        reply_markup=InlineKeyboardMarkup(
+            [[
+                InlineKeyboardButton('❤️‍🔥 Please Share and Support ❤️‍🔥', url='https://t.me/share/url?url=Movie%20Bot:%20@SL_Auto_Filter_Bot')
+            ]]
+        ),
         protect_content=True if pre == 'filep' else False,
         )
                     
