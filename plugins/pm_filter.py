@@ -417,7 +417,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("YES", url='https://t.me/SL_Auto_Filter_Bot")
+                    InlineKeyboardButton('YES', url='https://t.me/SL_Auto_Filter_Bot')
                 ]
             ]
         )
