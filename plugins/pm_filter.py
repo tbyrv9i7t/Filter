@@ -407,6 +407,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f_caption = f_caption
         if f_caption is None:
             f_caption = f"{title}"
+        buttons = [[
+            InlineKeyboardButton('Please Share and Support', url='https://t.me/share/url?url=Movie%20Bot:%20@SL_Auto_Filter_Bot')
+        ]]
         await query.answer()
         await client.send_cached_media(
             chat_id=query.from_user.id,
