@@ -376,9 +376,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     )
                 ],
             ]
-        ),
-        quote=True,
-    )
+        )
     
         try:
             if AUTH_CHANNEL and not await is_subscribed(client, query):
