@@ -345,7 +345,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         files_ = await get_file_details(file_id)
         user = query.message.reply_to_message.from_user.id
         ad_user = query.from_user.id
-        if int(ad_user) in ADMINS:
+        if int(ad_user):
             pass
         elif int(user) != 0 and query.from_user.id != int(user):
             return await query.answer(
