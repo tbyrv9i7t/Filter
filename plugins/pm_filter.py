@@ -368,6 +368,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 InlineKeyboardButton('Please Share and Support', url='https://t.me/share/url?url=Movie%20Bot:%20@SL_Auto_Filter_Bot')
             ]
         ]
+        return InlineKeyboardMarkup(buttons)
 
         try:
             if AUTH_CHANNEL and not await is_subscribed(client, query):
@@ -417,6 +418,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 InlineKeyboardButton('Please Share and Support', url='https://t.me/share/url?url=Movie%20Bot:%20@SL_Auto_Filter_Bot')
             ]
         ]
+        return InlineKeyboardMarkup(buttons)
         await query.answer()
         await client.send_cached_media(
             chat_id=query.from_user.id,
