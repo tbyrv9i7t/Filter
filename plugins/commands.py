@@ -230,7 +230,7 @@ async def start(client, message):
     if f_caption is None:
         f_caption = f"{files.file_name}"
         reply_markup=InlineKeyboardMarkup([[
-            InlineKeyboardButton('Sᴜᴘᴘᴏʀᴛ Gʀᴏᴜᴘ', url='https://t.me/SL_Auto_Filter_Bot')
+            InlineKeyboardButton('Please Share and Support', url='https://t.me/share/url?url=Movie%20Bot:%20@SL_Auto_Filter_Bot')
         ]])
     await client.send_cached_media(
         chat_id=message.from_user.id,
