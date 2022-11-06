@@ -342,15 +342,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.answer(alert, show_alert=True)
     if query.data.startswith("file"):
         ident, file_id = query.data.split("#")
-        files_ = await get_file_details(file_id)
-        user = query.message.reply_to_message.from_user.id
-        ad_user = query.from_user.id
-        if int(ad_user) in ADMINS:
-            pass
-        elif int(user) != 0 and query.from_user.id != int(user):
-            return await query.answer(
-                "All right, but this is not yours.;\nNice Try! But, This Was Not Your Request, Request Yourself;",
-                show_alert=True)
+        if int(user) != 0 and query.from_user.id != int(user):
+            return await query.answer("This Was Not Your Request, Request Yourself" ,show_alert=True)
         if not files_:
             return await query.answer('No such file exist.')
         files = files_[0]
