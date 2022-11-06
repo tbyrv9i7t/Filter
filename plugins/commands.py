@@ -229,9 +229,10 @@ async def start(client, message):
             f_caption=f_caption
     if f_caption is None:
         f_caption = f"{files.file_name}"
-        reply_markup=InlineKeyboardMarkup([[
-            InlineKeyboardButton('Please Share and Support', url='https://t.me/share/url?url=Movie%20Bot:%20@SL_Auto_Filter_Bot')
-        ]])
+        buttons = [[
+            InlineKeyboardButton('◀️ Back', callback_data='start')
+        ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
     await client.send_cached_media(
         chat_id=message.from_user.id,
         file_id=file_id,
