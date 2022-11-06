@@ -415,9 +415,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
             f_caption = f"{title}"
         buttons = [
             [
-            InlineKeyboardButton('Please Share and Support', url='https://t.me/share/url?url=Movie%20Bot:%20@SL_Auto_Filter_Bot')
-        ]
-        ]
+                InlineKeyboardButton('⭕️ Support', url='https://t.me/JOSPSupport'),
+                InlineKeyboardButton('Channel ⭕️', url='https://t.me/JosProjects')
+            ],
+            [
+                InlineKeyboardButton('🎬 Series & Movie Club 🎬', url=f'https://t.me/+y53tWFUw6Q43NzE9')
+            ]
+            ]
         await query.answer()
         await client.send_cached_media(
             chat_id=query.from_user.id,
