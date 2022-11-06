@@ -234,6 +234,7 @@ async def start(client, message):
                 InlineKeyboardButton('Please Share and Support', url='https://t.me/share/url?url=Movie%20Bot:%20@SL_Auto_Filter_Bot')
             ]
         ]
+        return InlineKeyboardMarkup(buttons)
     await client.send_cached_media(
         chat_id=message.from_user.id,
         file_id=file_id,
