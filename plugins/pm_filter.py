@@ -358,16 +358,17 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f_caption = CUSTOM_FILE_CAPTION.format(file_name='' if title is None else title,
                                                        file_size='' if size is None else size,
                                                        file_caption='' if f_caption is None else f_caption)
-        buttons = [[
-            InlineKeyboardButton('◀️ Back', callback_data='start')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
             except Exception as e:
                 logger.exception(e)
             f_caption = f_caption
         if f_caption is None:
             f_caption = f"{files.file_name}"
-
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton('hi', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
+                ]
+            ]
         try:
             if AUTH_CHANNEL and not await is_subscribed(client, query):
                 await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
