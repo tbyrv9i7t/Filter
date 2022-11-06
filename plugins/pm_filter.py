@@ -376,7 +376,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     chat_id=query.from_user.id,
                     file_id=file_id,
                     caption=f_caption,
-                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('❤️‍🔥 Please Share and Support ❤️‍🔥', url='https://t.me/share/url?url=Movie%20Bot:%20@SL_Auto_Filter_Bot')]]),
+                    reply_markup=InlineKeyboardMarkup(
+                        [[
+                            InlineKeyboardButton('❤️‍🔥 Please Share and Support ❤️‍🔥', url='https://t.me/share/url?url=Movie%20Bot:%20@SL_Auto_Filter_Bot')
+                        ]]
+                    ),
                     protect_content=True if ident == "filep" else False 
                 )
                 await query.answer('Check PM, I have sent file in PM!', show_alert=True)
@@ -413,7 +417,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
             chat_id=query.from_user.id,
             file_id=file_id,
             caption=f_caption,
-            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('❤️‍🔥 Please Share and Support ❤️‍🔥', url='https://t.me/share/url?url=Movie%20Bot:%20@SL_Auto_Filter_Bot')]]),
+            reply_markup=InlineKeyboardMarkup(
+                [[
+                    InlineKeyboardButton('❤️‍🔥 Please Share and Support ❤️‍🔥', url='https://t.me/share/url?url=Movie%20Bot:%20@SL_Auto_Filter_Bot')
+                ]]
+            ),
             protect_content=True if ident == 'checksubp' else False
         )
     elif query.data == "pages":
