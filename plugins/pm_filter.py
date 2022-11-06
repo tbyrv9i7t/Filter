@@ -342,7 +342,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.answer(alert, show_alert=True)
     if query.data.startswith("file"):
         ident, file_id = query.data.split("#")
-        user = query.message.reply_to_message.from_user.id
+        user = query.message.reply_to_message.id
         if int(user) != 0 and query.from_user.id != int(user):
             return await query.answer("This Was Not Your Request, Request Yourself", show_alert=True)
         if not files_:
