@@ -52,8 +52,9 @@ Just Add Me To Your Group As Admin 🤩"""
 • /link - Create Link One Post
 • /batch - Create Link Multiple Posts"""
 
-    ADMINS_TXT = """<b><u>Admins Mods</u></b>
+    OWNER_TXT = """<b><u>Owner Mods</u></b>
 
+<b>Commands and Usage:</b>
 • /users - List All Users
 • /groups - List All Groups
 • /ban - Ban User
