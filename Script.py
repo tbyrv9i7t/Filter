@@ -62,6 +62,7 @@ Just Add Me To Your Group As Admin 🤩"""
 • /leave - Leave Group
 • /disable - Disable Group
 • /enable - Re-enable Group
+• /invite_link - Generate Group Link
 • /users_broadcast - Broadcast Message All Users
 • /groups_broadcast - Broadcast Message All Groups"""
 
