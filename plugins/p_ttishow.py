@@ -185,7 +185,7 @@ async def ban_a_user(bot, message):
     else:
         jar = await db.get_ban_status(k.id)
         if jar['is_banned']:
-            return await message.reply(f"{k.mention} is already banned\nReason: {jar['ban_reason']}")
+            return await message.reply(f"{k.mention} is already banned")
         await db.ban_user(k.id, reason)
         temp.BANNED_USERS.append(k.id)
         await message.reply(f"Successfully banned {k.mention}")
