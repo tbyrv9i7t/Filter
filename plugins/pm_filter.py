@@ -529,7 +529,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "extramods":
         buttons = [[
-            InlineKeyboardButton('◀️ Back', callback_data='filters')
+            InlineKeyboardButton('◀️ Back', callback_data='help')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
