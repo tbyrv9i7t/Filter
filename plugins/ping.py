@@ -2,8 +2,7 @@
 # use with proper credits
 
 from pyrogram import Client, filters
-from info import COMMAND_HAND_LER
-from plugins.helper_functions.cust_p_filters import f_onw_fliter
+
 
 # EMOJI CONSTANTS
 DART_E_MOJI = "🎯"
@@ -11,9 +10,7 @@ DART_E_MOJI = "🎯"
 
 
 @Client.on_message(
-    filters.command(["throw", "dart"], COMMAND_HAND_LER) &
-    f_onw_fliter
-)
+    filters.command(["throw", "dart"])
 async def throw_dart(client, message):
     """ /throw an @AnimatedDart """
     rep_mesg_id = message.message_id
