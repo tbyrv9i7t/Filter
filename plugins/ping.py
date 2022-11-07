@@ -2,7 +2,6 @@ from __future__ import unicode_literals
 
 import os
 import requests
-import aiohttp
 import yt_dlp
 import asyncio
 import math
