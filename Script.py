@@ -43,19 +43,25 @@ Just Add Me To Your Group As Admin 🤩"""
 • /disconnect - Disconnect PM
 • /connections - List All Connections"""
 
-    EXTRAMODS_TXT = """<b><u>Extra Mods</u></b>
+    EXTRAMODS_TXT = """Extra Mods"""
+
+    SEARCH_TXT = """<b><u>Search</u></b>
 
 <b>Commands and Usage:</b>
 • /id - User ID
 • /info - User Informations
-• /imdb, /search - IMDb Movie Informations"""
+• /imdb or /search - IMDb Movie Informations"""
+
+    ABOUTCREATOR_TXT = """<b><u>About Creator</u></b>
+
+• /about_creator - Bot Creator Details"""
 
     STATUS_TXT = """★ Total Files: <code>{}</code>
 ★ Total Users: <code>{}</code>
 ★ Total Groups: <code>{}</code>
 ★ Used Storage: <code>{}</code>
 ★ Free Storage: <code>{}</code>"""
-    
+
     WELCOME_TXT = """👋 Hello {}, Welcome to <b>{}</b>"""
 
     FORCESUB_TXT = """First join the Updates Channel and then Try Again."""
