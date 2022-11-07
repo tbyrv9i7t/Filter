@@ -63,7 +63,9 @@ Just Add Me To Your Group As Admin 🤩"""
 ★ Used Storage: <code>{}</code>
 ★ Free Storage: <code>{}</code>"""
 
-    ABOUT_CREATOR = """Full Name: Hansaka Anuhas\nAge: 16\nLive in: Sri Lanka 🇱🇰"""
+    ABOUT_CREATOR = """★ Full Name: Hansaka Anuhas
+★ Age: 16
+★ Live in: Chilaw, Sri Lanka 🇱🇰"""
 
     WELCOME_TXT = """👋 Hello {}, Welcome to <b>{}</b>"""
 
