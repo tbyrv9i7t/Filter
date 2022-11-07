@@ -43,19 +43,12 @@ Just Add Me To Your Group As Admin 🤩"""
 • /disconnect - Disconnect PM
 • /connections - List All Connections"""
 
-    EXTRAMODS_TXT = """Extra Mods"""
-
-    SEARCH_TXT = """<b><u>Search</u></b>
+    EXTRAMODS_TXT = """<b><u>Extra Mods</u></b>
 
 <b>Commands and Usage:</b>
 • /id - User ID
 • /info - User Informations
 • /imdb or /search - IMDb Movie Informations"""
-
-    ABOUTCREATOR_TXT = """<b><u>About Creator</u></b>
-
-<b>Commands and Usage:</b>
-• /about_creator - Bot Creator Details"""
 
     STATUS_TXT = """★ Total Files: <code>{}</code>
 ★ Total Users: <code>{}</code>
@@ -63,7 +56,7 @@ Just Add Me To Your Group As Admin 🤩"""
 ★ Used Storage: <code>{}</code>
 ★ Free Storage: <code>{}</code>"""
 
-    ABOUT_CREATOR = """★ Full Name: Hansaka Anuhas
+    ABOUTCREATOR_TXT = """★ Full Name: Hansaka Anuhas
 ★ Age: 16
 ★ Live in: Chilaw, Sri Lanka 🇱🇰"""
 
