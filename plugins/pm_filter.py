@@ -529,34 +529,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "extramods":
         buttons = [[
-            InlineKeyboardButton('Search', callback_data='search'),
-            InlineKeyboardButton('About Creator', callback_data='about_creator')
-        ], [
             InlineKeyboardButton('◀️ Back', callback_data='filters')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.EXTRAMODS_TXT,
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
-    elif query.data == "search":
-        buttons = [[
-            InlineKeyboardButton('◀️ Back', callback_data='extramods')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.SEARCH_TXT,
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.HTML
-        )
-    elif query.data == "about_creator":
-        buttons = [[
-            InlineKeyboardButton('◀️ Back', callback_data='extramods')
-        ]]
-        reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
-            text=script.ABOUTCREATOR_TXT,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
