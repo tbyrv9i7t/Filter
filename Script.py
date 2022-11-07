@@ -49,11 +49,13 @@ Just Add Me To Your Group As Admin 🤩"""
 • /id - User ID
 • /info - User Informations
 • /imdb or /search - IMDb Movie Informations
+• /status - Bot Database Status
 • /settings - Change Group Settings
+• /set_template - Set IMDb Template
 • /link - Create Link One Post
 • /batch - Create Link Multiple Posts"""
 
-    OWNER_TXT = """<b><u>Extra Mods</u></b>
+    OWNERMODS_TXT = """<b><u>Owner Mods</u></b>
 
 <u>This mods only works for my owner</u>
 
