@@ -10,12 +10,12 @@ AJAX = "<b>𝙱𝙾𝚃 ›› https://t.me/Devil0Bot_Bot</b>"
 # -- Constants End -- #
 
 
-@Client.on_message(filters.command("alive", COMMAND_HAND_LER) & f_onw_fliter)
+@Client.on_message(filters.command("alive"))
 async def check_alive(_, message):
     await message.reply_text(ALIVE)
 
 
-@Client.on_message(filters.command("ping", COMMAND_HAND_LER) & f_onw_fliter)
+@Client.on_message(filters.command("ping"))
 async def ping(_, message):
     start_t = time.time()
     rm = await message.reply_text("...")
@@ -24,22 +24,22 @@ async def ping(_, message):
     await rm.edit(f"Pong!\n{time_taken_s:.3f} ms")
 
 
-@Client.on_message(filters.command("repo", COMMAND_HAND_LER) & f_onw_fliter)
+@Client.on_message(filters.command("repo"))
 async def repo(_, message):
     await message.reply_text(REPO)
 
 
-@Client.on_message(filters.command("group", COMMAND_HAND_LER) & f_onw_fliter)
+@Client.on_message(filters.command("group"))
 async def group(_, message):
     await message.reply_text(GROUP)
 
 
-@Client.on_message(filters.command("channel", COMMAND_HAND_LER) & f_onw_fliter)
+@Client.on_message(filters.command("channel"))
 async def channel(_, message):
     await message.reply_text(CHANNEL)
 
 
-@Client.on_message(filters.command("ajax", COMMAND_HAND_LER) & f_onw_fliter)
+@Client.on_message(filters.command("ajax"))
 async def ajax(_, message):
     await message.reply_text(AJAX)
 
