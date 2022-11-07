@@ -248,7 +248,7 @@ async def list_chats(bot, message):
     chats = await db.get_all_chats()
     out = "Chats Saved In DB Are:\n\n"
     async for chat in chats:
-        out += f"**Title:** `{chat['title']}`\n**- ID:** `{chat['id']}`"
+        out += f"**Title:** `{chat['title']}`\n**- ID:** `{chat['id']}`\n"
         if chat['chat_status']['is_disabled']:
             out += '( Disabled Chat )'
         out += '\n'
