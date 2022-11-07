@@ -54,6 +54,7 @@ Just Add Me To Your Group As Admin 🤩"""
 
     ABOUTCREATOR_TXT = """<b><u>About Creator</u></b>
 
+<b>Commands and Usage:</b>
 • /about_creator - Bot Creator Details"""
 
     STATUS_TXT = """★ Total Files: <code>{}</code>
@@ -61,6 +62,8 @@ Just Add Me To Your Group As Admin 🤩"""
 ★ Total Groups: <code>{}</code>
 ★ Used Storage: <code>{}</code>
 ★ Free Storage: <code>{}</code>"""
+
+    ABOUT_CREATOR = """Full Name: Hansaka Anuhas\nAge: 16\nLive in: Sri Lanka 🇱🇰"""
 
     WELCOME_TXT = """👋 Hello {}, Welcome to <b>{}</b>"""
 
