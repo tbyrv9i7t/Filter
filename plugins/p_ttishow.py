@@ -130,7 +130,7 @@ async def re_enable_chat(bot, message):
 
 
 @Client.on_message(filters.command('status') & filters.incoming)
-async def get_ststs(bot, message):
+async def get_status(bot, message):
     rju = await message.reply('Fetching stats..')
     total_users = await db.total_users_count()
     totl_chats = await db.total_chat_count()
@@ -142,8 +142,8 @@ async def get_ststs(bot, message):
     await rju.edit(script.STATUS_TXT.format(files, total_users, totl_chats, size, free))
 
 
-@Client.on_message(filters.command('invite') & filters.user(ADMINS))
-async def gen_invite(bot, message):
+@Client.on_message(filters.command('invite_link') & filters.user(ADMINS))
+async def gen_invite_link(bot, message):
     if len(message.command) == 1:
         return await message.reply('Give me a chat id')
     chat = message.command[1]
@@ -243,7 +243,7 @@ async def list_users(bot, message):
         await message.reply_document('users.txt', caption="List Of Users")
 
 @Client.on_message(filters.command('groups') & filters.user(ADMINS))
-async def list_chats(bot, message):
+async def list_groups(bot, message):
     raju = await message.reply('Getting List Of Groups')
     chats = await db.get_all_chats()
     out = "Chats Saved In DB Are:\n\n"
