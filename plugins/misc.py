@@ -1,5 +1,4 @@
 import os
-from Script import script
 from pyrogram import Client, filters, enums
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant, MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
 from info import IMDB_TEMPLATE
@@ -209,7 +208,3 @@ async def imdb_callback(bot: Client, quer_y: CallbackQuery):
     else:
         await quer_y.message.edit(caption, reply_markup=InlineKeyboardMarkup(btn), disable_web_page_preview=False)
     await quer_y.answer()
-
-@Client.on_message(filters.command('about_creator'))
-async def about_creator(bot, message):
-    await message.reply(script.ABOUTCREATOR_TXT)
