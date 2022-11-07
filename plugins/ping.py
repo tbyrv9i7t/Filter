@@ -9,8 +9,7 @@ DART_E_MOJI = "🎯"
 # EMOJI CONSTANTS
 
 
-@Client.on_message(
-    filters.command(["throw", "dart"])
+@Client.on_message(filters.command('throw'))
 async def throw_dart(client, message):
     """ /throw an @AnimatedDart """
     rep_mesg_id = message.message_id
