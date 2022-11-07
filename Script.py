@@ -59,7 +59,7 @@ Just Add Me To Your Group As Admin 🤩"""
 
 <b>Commands and Usage:</b>
 • /users - List All Users
-• /groups - List All Groups
+• /chats - List All Groups
 • /ban - Ban User
 • /unban - Unban User
 • /leave - Leave Group
