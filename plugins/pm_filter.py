@@ -526,7 +526,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "extramods":
         buttons = [[
-            InlineKeyboardButton('Owner', callback_data='owner')
+            InlineKeyboardButton('Owner Mods', callback_data='ownermods')
         ], [
             InlineKeyboardButton('◀️ Back', callback_data='help')
         ]]
@@ -536,13 +536,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
-    elif query.data == "owner":
+    elif query.data == "ownermods":
         buttons = [[
             InlineKeyboardButton('◀️ Back', callback_data='extramods')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
-            text=script.OWNER_TXT,
+            text=script.OWNERMODS_TXT,
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
