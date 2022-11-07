@@ -248,7 +248,7 @@ async def list_groups(bot, message):
     chats = await db.get_all_chats()
     out = "Groups Saved In DB Are:\n\n"
     async for chat in chats:
-        out += f"**Title:** `{chat['title']}`\n**- ID:** `{chat['id']}`"\n
+        out += f"**Title:** `{chat['title']}`\n**- ID:** `{chat['id']}`\n"
         if chat['chat_status']['is_disabled']:
             out += '(Disabled Group)'
         out += '\n'
