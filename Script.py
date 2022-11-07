@@ -49,10 +49,13 @@ Just Add Me To Your Group As Admin 🤩"""
 • /id - User ID
 • /info - User Informations
 • /imdb or /search - IMDb Movie Informations
+• /settings - Change Group Settings
 • /link - Create Link One Post
 • /batch - Create Link Multiple Posts"""
 
-    OWNER_TXT = """<b><u>Owner Mods</u></b>
+    OWNER_TXT = """<b><u>Extra Mods</u></b>
+
+<u>This mods only works for my owner</u>
 
 <b>Commands and Usage:</b>
 • /users - List All Users
