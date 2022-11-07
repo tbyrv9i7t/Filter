@@ -246,7 +246,7 @@ async def list_users(bot, message):
 async def list_groups(bot, message):
     raju = await message.reply('Getting List Of Groups')
     chats = await db.get_all_chats()
-    out = "Chats Saved In DB Are:\n\n"
+    out = "Groups Saved In DB Are:\n\n"
     async for chat in chats:
         out += f"**Title:** `{chat['title']}`\n**- ID:** `{chat['id']}`"
         if chat['chat_status']['is_disabled']:
@@ -255,6 +255,6 @@ async def list_groups(bot, message):
     try:
         await raju.edit_text(out)
     except MessageTooLong:
-        with open('chats.txt', 'w+') as outfile:
+        with open('groups.txt', 'w+') as outfile:
             outfile.write(out)
-        await message.reply_document('chats.txt', caption="List Of Chats")
+        await message.reply_document('groups.txt', caption="List Of Groups")
