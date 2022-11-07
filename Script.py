@@ -48,7 +48,21 @@ Just Add Me To Your Group As Admin 🤩"""
 <b>Commands and Usage:</b>
 • /id - User ID
 • /info - User Informations
-• /imdb or /search - IMDb Movie Informations"""
+• /imdb or /search - IMDb Movie Informations
+• /link - Create Link One Post
+• /batch - Create Link Multiple Posts"""
+
+    ADMINS_TXT = """<b><u>Admins Mods</u></b>
+
+• /users - List All Users
+• /groups - List All Groups
+• /ban - Ban User
+• /unban - Unban User
+• /leave - Leave Group
+• /disable - Disable Group
+• /enable - Re-enable Group
+• /users_broadcast - Broadcast Message All Users
+• /groups_broadcast - Broadcast Message All Groups"""
 
     STATUS_TXT = """★ Total Files: <code>{}</code>
 ★ Total Users: <code>{}</code>
