@@ -1,23 +1,25 @@
-# codes added by @lallu_tg
-# use with proper credits
-
 from pyrogram import Client, filters
 
 
-# EMOJI CONSTANTS
-DART_E_MOJI = "🎯"
-# EMOJI CONSTANTS
+HELP = 'HIIII'
+GROUP = 
 
 
-@Client.on_message(filters.command('throw'))
-async def throw_dart(client, message):
-    """ /throw an @AnimatedDart """
-    rep_mesg_id = message.message_id
-    if message.reply_to_message:
-        rep_mesg_id = message.reply_to_message.message_id
-    await client.send_dice(
-        chat_id=message.chat.id,
-        emoji=DART_E_MOJI,
-        disable_notification=True,
-        reply_to_message_id=rep_mesg_id
-    )
+@Client.on_message(filters.command('help'))
+async def alive(bot, message):
+    await message.reply_text(HELP)
+    reply_markup=InlineKeyboardMarkup(
+                [[
+                    InlineKeyboardButton('❤️‍🔥 Please Share and Support ❤️‍🔥', url=f'https://t.me/share/url?url=https://t.me/{temp.U_NAME}')
+                ]]
+            ),
+
+
+@Client.on_message(filters.command(''))
+async def alive(bot, message):
+    await message.reply_text(GROUP)
+
+
+@Client.on_message(filters.command('alive'))
+async def alive(bot, message):
+    await message.reply_text(ALIVE)
