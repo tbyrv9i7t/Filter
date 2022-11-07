@@ -6,7 +6,7 @@ HELP = 'HIIII'
 
 @Client.on_message(filters.command('help'))
 async def alive(bot, message):
-    buttons = [[
-        InlineKeyboardButton('HIII', url='https://github.com/Hansaka-Anuhas/Filter-Bot/blob/master/plugins/pm_filter.py')
+    btn = [[
+        InlineKeyboardButton('Contact Me', url='https://t.me/Hansaka_Anuhas')
            ]]
-    await message.reply(HELP, reply_markup = InlineKeyboardMarkup(buttons))
+    await message.reply.photo(photo'https://telegra.ph/file/6cdc6dee747e610adc994.jpg', reply_markup=InlineKeyboardMarkup(btn))
