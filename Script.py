@@ -48,7 +48,8 @@ Just Add Me To Your Group As Admin 🤩"""
 <b>Commands and Usage:</b>
 • /id - User ID
 • /info - User Informations
-• /imdb or /search - IMDb Movie Informations"""
+• /imdb or /search - IMDb Movie Informations
+• /about_creator - Bot Creator Details"""
 
     STATUS_TXT = """★ Total Files: <code>{}</code>
 ★ Total Users: <code>{}</code>
