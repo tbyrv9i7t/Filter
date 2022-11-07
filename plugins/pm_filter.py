@@ -526,7 +526,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "extramods":
         buttons = [[
-            InlineKeyboardButton('Admins', callback_data='owner')
+            InlineKeyboardButton('Owner', callback_data='owner')
         ], [
             InlineKeyboardButton('◀️ Back', callback_data='help')
         ]]
