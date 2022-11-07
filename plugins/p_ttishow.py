@@ -24,7 +24,7 @@ async def save_group(bot, message):
             ]]
             reply_markup=InlineKeyboardMarkup(buttons)
             k = await message.reply(
-                text='<b><u>CHAT NOT ALLOWED</u></b>\n\nMy admin has restricted me from working here! If you want to know more about it contact support.',
+                text='<b><u>Chat Not Allowed</u></b>\n\nMy admin has restricted me from working here! If you want to know more about it contact support.',
                 reply_markup=reply_markup,
             )
 
@@ -64,7 +64,7 @@ async def leave_a_chat(bot, message):
         reply_markup=InlineKeyboardMarkup(buttons)
         await bot.send_message(
             chat_id=chat,
-            text='Hello Friends,\nMy admin has told me to leave from group so i go! If you wanna add me again contact my support group.',
+            text='Hello Friends,\nMy admin has told me to leave from group so i go! If you need add me again contact my support.',
             reply_markup=reply_markup,
         )
 
@@ -103,7 +103,7 @@ async def disable_chat(bot, message):
         reply_markup=InlineKeyboardMarkup(buttons)
         await bot.send_message(
             chat_id=chat_, 
-            text=f'Hello Friends,\nMy admin has told me to leave from group so i go! If you wanna add me again contact my support group.',
+            text=f'Hello Friends,\nMy admin has told me to leave from group so i go! If you need add me again contact my support.',
             reply_markup=reply_markup)
         await bot.leave_chat(chat_)
     except Exception as e:
@@ -242,19 +242,19 @@ async def list_users(bot, message):
             outfile.write(out)
         await message.reply_document('users.txt', caption="List Of Users")
 
-@Client.on_message(filters.command('groups') & filters.user(ADMINS))
-async def list_groups(bot, message):
-    raju = await message.reply('Getting List Of Groups')
+@Client.on_message(filters.command('chats') & filters.user(ADMINS))
+async def list_chats(bot, message):
+    raju = await message.reply('Getting List Of chats')
     chats = await db.get_all_chats()
-    out = "Groups Saved In DB Are:\n\n"
+    out = "Chats Saved In DB Are:\n\n"
     async for chat in chats:
-        out += f"**Title:** `{chat['title']}`\n**- ID:** `{chat['id']}`\n"
+        out += f"**Title:** `{chat['title']}`\n**- ID:** `{chat['id']}`"
         if chat['chat_status']['is_disabled']:
-            out += '(Disabled Group)'
+            out += '( Disabled Chat )'
         out += '\n'
     try:
         await raju.edit_text(out)
     except MessageTooLong:
-        with open('groups.txt', 'w+') as outfile:
+        with open('chats.txt', 'w+') as outfile:
             outfile.write(out)
-        await message.reply_document('groups.txt', caption="List Of Groups")
+        await message.reply_document('chats.txt', caption="List Of Chats")
