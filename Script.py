@@ -57,8 +57,6 @@ Just Add Me To Your Group As Admin 🤩"""
 
     OWNERMODS_TXT = """<b><u>Owner Mods</u></b>
 
-<u>This mods only works for my owner</u>
-
 <b>Commands and Usage:</b>
 • /users - List All Users
 • /groups - List All Groups
