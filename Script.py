@@ -82,10 +82,11 @@ Just Add Me To Your Group As Admin 🤩"""
     HOWTODOWNLOAD_TXT = """First click on the Movie you want and then start the Bot."""
 
     LOG_TEXT_G = """#NewGroup
-Group = {}(<code>{}</code>)
-Total Members = <code>{}</code>
-Added By - {}"""
+Group - {}
+ID - <code>{}</code>
+Total Members - {}
+Added by - {}"""
 
     LOG_TEXT_P = """#NewUser
-ID - <code>{}</code>
-Name - {}"""
+Name - {}
+ID - <code>{}</code>"""
