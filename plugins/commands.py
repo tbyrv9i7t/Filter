@@ -73,7 +73,7 @@ async def start(client, message):
         await client.send_photo(
             chat_id=message.from_user.id,
             photo=random.choice(PICS),
-            caption="**මුලින්ම මගේ Updates Channel එකට Join වෙන්න, ඊට පස්සේ ආයේ උත්සාහ කරන්න... 😇**",
+            caption=f"👋 හෙලෝ {message.from_user.mention},\n\n**මුලින්ම මගේ Updates Channel එකට Join වෙන්න, ඊට පස්සේ ආයේ උත්සාහ කරන්න... 😇**",
             reply_markup=InlineKeyboardMarkup(btn),
             parse_mode=enums.ParseMode.MARKDOWN
             )
