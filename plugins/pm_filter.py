@@ -40,7 +40,7 @@ async def give_filter(client, message):
 async def next_page(bot, query):
     ident, req, key, offset = query.data.split("_")
     if int(req) not in [query.from_user.id, 0]:
-        return await query.answer(f"හෙලෝ {query.from_user.first_name}, අනුන්ගේ ඒවා ඔබන්න එපා!", show_alert=True)
+        return await query.answer(f"හෙලෝ {message.from_user.first_name}, අනුන්ගේ ඒවා ඔබන්න එපා!", show_alert=True)
     try:
         offset = int(offset)
     except:
@@ -146,8 +146,8 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = await query.message.edit(f'👋 හෙලෝ,\n\nඔහොම Movie එකක් වත් TV Series එකක් වත් මගේ Database එකේ හොයා ගන්න නෑ... 😔')
-            await asyncio.sleep(10)
+            k = await query.message.edit('<b>👋 හෙලෝ,\n\nඔහොම Movie එකක් වත් TV Series එකක් වත් මගේ Database එකේ හොයා ගන්න නෑ... 😔</b>')
+            await asyncio.sleep(60)
             await k.delete()
 
 
@@ -798,7 +798,7 @@ async def advantage_spell_chok(msg):
     movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist:
-        k = await msg.reply(f"👋 හෙලෝ,\n\nඔයා ඉල්ලපු Movie එක හරි TV Series එක හරි මට හොයා ගන්න බෑ, බලන්න ඔයාගේ Spellings හරිද කියලා බලන්න... 😉")
+        k = await msg.reply("<b>👋 හෙලෝ,\n\nඔයා ඉල්ලපු Movie එක හරි TV Series එක හරි මට හොයා ගන්න බෑ, බලන්න ඔයාගේ Spellings හරිද කියලා බලන්න... 😉</b>")
         await asyncio.sleep(60)
         await k.delete()
         return
@@ -810,7 +810,7 @@ async def advantage_spell_chok(msg):
         )
     ] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="❌ Close ❌", callback_data=f'spolling#{user}#close_spellcheck')])
-    k = await msg.reply(f"👋 හෙලෝ,\n\nඔයා ඉල්ලපු Movie එක හරි TV Series එක හරි මට හොයා ගන්න බැරි වුනා, බලන්න මෙතන තියෙනෙවද කියලා... 👇",
+    k = await msg.reply("<b>👋 හෙලෝ,\n\nඔයා ඉල්ලපු Movie එක හරි TV Series එක හරි මට හොයා ගන්න බැරි වුනා, බලන්න මෙතන තියෙනෙවද කියලා... 👇</b>",
                     reply_markup=InlineKeyboardMarkup(btn))
     await asyncio.sleep(60)
     await k.delete()
