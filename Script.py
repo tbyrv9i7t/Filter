@@ -77,9 +77,9 @@ Just Add Me To Your Group As Admin 🤩"""
 
     WELCOME_TXT = """👋 Hello {}, Welcome to <b>{}</b>"""
 
-    FORCESUB_TXT = """First join the Updates Channel and then Try Again."""
+    FORCESUB_TXT = """<b>මුලින්ම මගේ Updates Channel එකට Join වෙන්න, ඊට පස්සේ අයේ උත්සාහ කරන්න... 😇</b>"""
 
-    HOWTODOWNLOAD_TXT = """First click on the Movie you want and then start the Bot."""
+    HOWTODOWNLOAD_TXT = """මුලින්ම් ඔයාට ඕන Movie එකේ Button එක ඔබන්න, ඊට පස්සේ බොටාව Start කරන්න..."""
 
     LOG_TEXT_G = """#NewGroup
 Group - {}
