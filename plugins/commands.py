@@ -75,6 +75,7 @@ async def start(client, message):
             photo=random.choice(PICS),
             caption=f"**👋 හෙලෝ {message.from_user.mention},\n\nමුලින්ම මගේ Updates Channel එකට Join වෙන්න, ඊට පස්සේ ආයේ උත්සාහ කරන්න... 😇**",
             reply_markup=InlineKeyboardMarkup(btn),
+            disable_web_page_preview=True,
             parse_mode=enums.ParseMode.MARKDOWN
             )
         return
