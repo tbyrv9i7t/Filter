@@ -424,7 +424,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "pages":
         await query.answer()
     elif query.data == "howtodownload":
-        await query.answer(text=script.HOWTODOWNLOAD_TXT, show_alert=True)
+        await query.answer(f"👋 හෙලෝ {query.from_user.first_name},/nමුලින්ම ඔය උඩින් තියන බටන් වලින් ඔයාට ඕන Movie එකේ හරි TV Series එකේ හරි නම හරියට බලලා ඔබන්න, ඊට පස්සේ බොටාව Start කරන්න...", show_alert=True)
     elif query.data == "start":
         buttons = [[
             InlineKeyboardButton('➕ Add Me To Your Group ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
