@@ -47,7 +47,7 @@ async def save_group(bot, message):
                         pass
                 temp.MELCOW['welcome'] = await message.reply_photo(
                                              photo=random.choice(PICS),
-                                             caption=f"👋 Hello {u.mention},\nWelcome To {message.chat.title}
+                                             caption=f"👋 Hello {u.mention},\nWelcome To {message.chat.title})
                                          )
 
 
