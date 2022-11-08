@@ -73,10 +73,9 @@ async def start(client, message):
         await client.send_photo(
             chat_id=message.from_user.id,
             photo=random.choice(PICS),
-            caption=f"**👋 හෙලෝ {message.from_user.mention},\n\nමුලින්ම මගේ Updates Channel එකට Join වෙන්න, ඊට පස්සේ ආයේ උත්සාහ කරන්න... 😇**",
+            caption=f"**👋 හෙලෝ {query.from_user.mention},\n\nමුලින්ම මගේ Updates Channel එකට Join වෙන්න, ඊට පස්සේ ආයේ උත්සාහ කරන්න... 😇**",
             reply_markup=InlineKeyboardMarkup(btn),
-            parse_mode=enums.ParseMode.MARKDOWN,
-            disable_web_page_preview=True
+            parse_mode=enums.ParseMode.MARKDOWN
             )
         return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
