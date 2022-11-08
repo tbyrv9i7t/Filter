@@ -146,7 +146,7 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = await query.message.edit(f'<b>👋 හෙලෝ {message.from_user.mention},\n\nඔහොම Movie එකක් වත් TV Series එකක් වත් මගේ Database එකේ හොයා ගන්න නෑ... 😔</b>')
+            k = await query.message.edit(f'<b>👋 හෙලෝ {query.from_user.mention},\n\nඔහොම Movie එකක් වත් TV Series එකක් වත් මගේ Database එකේ හොයා ගන්න නෑ... 😔</b>')
             await asyncio.sleep(60)
             await k.delete()
 
@@ -798,7 +798,7 @@ async def advantage_spell_chok(msg):
     movielist += [(re.sub(r'(\-|\(|\)|_)', '', i, flags=re.IGNORECASE)).strip() for i in gs_parsed]
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist:
-        k = await msg.reply("<b>👋 හෙලෝ,\n\nඔයා ඉල්ලපු Movie එක හරි TV Series එක හරි මට හොයා ගන්න බෑ, බලන්න ඔයාගේ Spellings හරිද කියලා බලන්න... 😉</b>")
+        k = await msg.reply(f"<b>👋 හෙලෝ {msg.from_user.mention},\n\nඔයා ඉල්ලපු Movie එක හරි TV Series එක හරි මට හොයා ගන්න බෑ, බලන්න ඔයාගේ Spellings හරිද කියලා බලන්න... 😉</b>")
         await asyncio.sleep(60)
         await k.delete()
         return
