@@ -146,7 +146,7 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = await query.message.edit(f'👋 හෙලෝ {query.from_user.mention},\n\nඔහොම Movie එකක් වත් TV Series එකක් වත් මගේ Database එකේ හොයා ගන්න නෑ... 😔')
+            k = await query.message.edit(f'👋 හෙලෝ,\n\nඔහොම Movie එකක් වත් TV Series එකක් වත් මගේ Database එකේ හොයා ගන්න නෑ... 😔')
             await asyncio.sleep(10)
             await k.delete()
 
@@ -799,7 +799,7 @@ async def advantage_spell_chok(msg):
     movielist = list(dict.fromkeys(movielist))  # removing duplicates
     if not movielist:
         k = await msg.reply(f"👋 හෙලෝ,\n\nඔයා ඉල්ලපු Movie එක හරි TV Series එක හරි මට හොයා ගන්න බෑ, බලන්න ඔයාගේ Spellings හරිද කියලා බලන්න... 😉")
-        await asyncio.sleep(10)
+        await asyncio.sleep(60)
         await k.delete()
         return
     SPELL_CHECK[msg.id] = movielist
@@ -810,7 +810,7 @@ async def advantage_spell_chok(msg):
         )
     ] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="❌ Close ❌", callback_data=f'spolling#{user}#close_spellcheck')])
-    k = await msg.reply(f"👋 හෙලෝ {message.from_user.mention},\n\nඔයා ඉල්ලපු Movie එක හරි TV Series එක හරි මට හොයා ගන්න බැරි වුනා, බලන්න මෙතන තියෙනෙවද කියලා... 👇",
+    k = await msg.reply(f"👋 හෙලෝ,\n\nඔයා ඉල්ලපු Movie එක හරි TV Series එක හරි මට හොයා ගන්න බැරි වුනා, බලන්න මෙතන තියෙනෙවද කියලා... 👇",
                     reply_markup=InlineKeyboardMarkup(btn))
     await asyncio.sleep(60)
     await k.delete()
