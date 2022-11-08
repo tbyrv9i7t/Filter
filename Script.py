@@ -1,7 +1,11 @@
 class script(object):
-    START_TXT = """👋 Hello {}
-I Can Provide Movies 🥳
-Just Add Me To Your Group As Admin 🤩"""
+    START_TXT = """👋 හෙලෝ {},
+
+මට පුළුවන් Movies සහ TV Series ඔයාලට ලබා දෙන්න... 🥳
+
+ඔයාට කරන්න තියෙන්නේ මාව Group එකකට Add කරලා මට Admin දෙන්න විතරයි... 😌
+
+ඉතුරු හරිය මං බලා ගන්නම්.... 😎"""
 
     HELP_TXT = """Help"""
 
