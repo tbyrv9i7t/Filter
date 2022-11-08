@@ -45,7 +45,7 @@ async def save_group(bot, message):
                         await (temp.MELCOW['welcome']).delete()
                     except:
                         pass
-                temp.MELCOW['welcome'] = await message.reply_photo(photo=random.choice(PICS), caption=f"👋 Hello {u.mention},\nWelcome To <b>{message.chat.title}</b>)
+                temp.MELCOW['welcome'] = await message.reply_photo(photo=random.choice(PICS), caption=f"👋 Hello {u.mention},\nWelcome To <b>{message.chat.title}</b>, reply_markup=reply_markup)
 
 
 @Client.on_message(filters.command('leave') & filters.user(ADMINS))
