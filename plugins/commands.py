@@ -75,8 +75,7 @@ async def start(client, message):
             photo=random.choice(PICS),
             caption=f"**👋 හෙලෝ {message.from_user.mention},\n\nමුලින්ම මගේ Updates Channel එකට Join වෙන්න, ඊට පස්සේ ආයේ උත්සාහ කරන්න... 😇**",
             reply_markup=InlineKeyboardMarkup(btn),
-            reply_markup=reply_markup,
-            parse_mode=enums.ParseMode.MARKDOWN
+            parse_mode=enums.ParseMode.HTML
             )
         return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
