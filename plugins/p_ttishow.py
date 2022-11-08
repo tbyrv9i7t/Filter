@@ -131,7 +131,7 @@ async def re_enable_chat(bot, message):
 
 @Client.on_message(filters.command('status') & filters.incoming)
 async def get_status(bot, message):
-    rju = await message.reply('Getting status...')
+    rju = await message.reply('Getting Status...')
     total_users = await db.total_users_count()
     totl_chats = await db.total_chat_count()
     files = await Media.count_documents()
@@ -231,7 +231,7 @@ async def list_users(bot, message):
     users = await db.get_all_users()
     out = "Users Saved In DB Are:\n\n"
     async for user in users:
-        out += f"<a href=tg://user?id={user['id']}>{user['name']}</a>\n`{user['id']}`\n"
+        out += f"<a href=tg://user?id={user['id']}>{user['name']}</a>`{user['id']}`\n"
         if user['ban_status']['is_banned']:
             out += '( Banned User )'
         out += '\n'
