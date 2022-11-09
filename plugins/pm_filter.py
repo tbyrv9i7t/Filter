@@ -343,7 +343,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     if query.data.startswith("file"):
         ident, file_id = query.data.split("#")
         files_ = await get_file_details(file_id)
-        user = .message.reply_to_message.id
+        user = query.message.reply_to_message.id
         if int(user) != 0 and query.from_user.id != int(user):
             return await query.answer(f"හෙලෝ {query.from_user.first_name},\nඅනුන්ගේ ඒවා ඔබන්න එපා!", show_alert=True)
         if not files_:
