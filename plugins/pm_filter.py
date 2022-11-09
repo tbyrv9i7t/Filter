@@ -344,7 +344,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ident, file_id = query.data.split("#")
         files_ = await get_file_details(file_id)
         user = query.from_user.id
-        elif int(user) != 0 and query.from_user.id != int(user):
+        if int(user) != 0 and query.from_user.id != int(user):
             return await query.answer(f"හෙලෝ {query.from_user.first_name},\nඅනුන්ගේ ඒවා ඔබන්න එපා!", show_alert=True)
         if not files_:
             return await query.answer('No such file exist.')
