@@ -343,6 +343,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
     if query.data.startswith("file"):
         ident, file_id = query.data.split("#")
         files_ = await get_file_details(file_id)
+        user = query.from_user.id
+        elif int(user) != 0 and query.from_user.id != int(user):
+            return await query.answer(f"හෙලෝ {query.from_user.first_name},\nඅනුන්ගේ ඒවා ඔබන්න එපා!", show_alert=True)
         if not files_:
             return await query.answer('No such file exist.')
         files = files_[0]
@@ -389,7 +392,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
     elif query.data.startswith("checksub"):
         if AUTH_CHANNEL and not await is_subscribed(client, query):
-            await query.answer(f"👋 හෙලෝ {query.from_user.first_name},\nමම ඔයාගේ උත්සාහ කිරීමට කැමතියි, ඒත් තරහ නැතුව මගේ Update Channel එකට Join වෙලා ආයේ උත්සාහ කරන්න...", show_alert=True)
+            await query.answer(f"හෙලෝ {query.from_user.first_name},\nමම ඔයාගේ උත්සාහ කිරීමට කැමතියි, ඒත් තරහ නැතුව මගේ Update Channel එකට Join වෙලා ආයේ උත්සාහ කරන්න...", show_alert=True)
             return
         ident, file_id = query.data.split("#")
         files_ = await get_file_details(file_id)
@@ -424,7 +427,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "pages":
         await query.answer()
     elif query.data == "howtodownload":
-        await query.answer(f"👋 හෙලෝ {query.from_user.first_name},\nමුලින්ම ඔය උඩින් තියන බටන් වලින් ඔයාට ඕන Movie එකේ හරි TV Series එකේ හරි නම හරියට බලලා ඔබන්න, ඊට පස්සේ බොටාව Start කරන්න...", show_alert=True)
+        await query.answer(f"හෙලෝ {query.from_user.first_name},\nමුලින්ම ඔය උඩින් තියන බටන් වලින් ඔයාට ඕන Movie එකේ හරි TV Series එකේ හරි නම හරියට බලලා ඔබන්න, ඊට පස්සේ බොටාව Start කරන්න...", show_alert=True)
     elif query.data == "start":
         buttons = [[
             InlineKeyboardButton('➕ Add Me To Your Group ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
