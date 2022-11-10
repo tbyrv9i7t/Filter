@@ -34,11 +34,11 @@ class script(object):
 
     AUTOFILTERS_TXT = """<b><u>Auto Filters</u></b>
 
-<b>Usage:</b>
-1. Make me the admin of your channel if it's private.
-2. Make sure that your channel does not contains camrips, porn and fake files.
-3. Forward the last message to me with quotes.
-4. I'll add all the files in that channel to my database."""
+<b>භාවිතයට උපදෙස්:</b>
+
+<b>1. ඔයාට Movies හරි TV Series හරි Channel එකක් තියෙනවනම්, මාව ඒකට Add කරලා මට Admin දෙන්න.
+2. ඔයාගේ Channel එකේ ඔයාට කැමති Message එකක් මට Forward කරන්න.
+3. ඉතුරු හරිය මං බලා ගන්නම්.</b>"""
 
     CONNECTIONS_TXT = """<b><u>Connections</u></b>
 
