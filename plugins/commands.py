@@ -32,7 +32,7 @@ async def start(client, message):
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.mention, message.from_user.id))
     if len(message.command) != 2:
         buttons = [[
-            InlineKeyboardButton('Start', callback_data='start')
+            InlineKeyboardButton('✅ Start ✅', callback_data='start')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
@@ -73,7 +73,7 @@ async def start(client, message):
         return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
         buttons = [[
-            InlineKeyboardButton('Start', callback_data='start')
+            InlineKeyboardButton('✅ Start ✅', callback_data='start')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
