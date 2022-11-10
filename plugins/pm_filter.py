@@ -593,7 +593,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         grpid = await active_connection(str(query.from_user.id))
 
         if str(grp_id) != str(grpid):
-            await query.message.edit("First /connect and Change /settings")
+            await query.message.edit("First /connect and then Change /settings")
             return await query.answer('Loading...')
 
         if status == "True":
