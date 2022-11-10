@@ -430,7 +430,7 @@ async def settings(client, message):
             ],
             [
                 InlineKeyboardButton(
-                    'Spell Check',
+                    'Spelling Check',
                     callback_data=f'setgs#spell_check#{settings["spell_check"]}#{grp_id}',
                 ),
                 InlineKeyboardButton(
