@@ -103,7 +103,7 @@ async def answer(bot, query):
 def get_reply_markup(query):
     buttons = [
         [
-            InlineKeyboardButton('❤️‍🔥 Please Share and Support ❤️‍🔥', url='https://t.me/share/url?url=Movie%20Bot:%20@SL_Auto_Filter_Bot')
+            InlineKeyboardButton('❤️‍🔥 Please Share and Support ❤️‍🔥', url=f'https://t.me/share/url?url=https://t.me/{temp.U_NAME}')
         ]
         ]
     return InlineKeyboardMarkup(buttons)
