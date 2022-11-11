@@ -376,7 +376,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     chat_id=query.from_user.id,
                     file_id=file_id,
                     caption=f_caption,
-                    protect_content=True if ident == "filep" else False
+                    protect_content=True if ident == "filep" else False,
+                    reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('❤️‍🔥 Please Share and Support ❤️‍🔥', url=f'https://t.me/share/url?url=https://t.me/{temp.U_NAME}')]])
                 )
                 await client.send_message(chat_id=query.from_user.id, text=f"<b>👋 හෙලෝ {query.from_user.mention},\n\nඔයා Download කරන්නේ x265 File එකක් නම් අනිවාරයෙන්ම ඔයාගේ Device එක x265 Codec එකට Support කරනවද කියලා දැනගෙන Download කරන්න, විශේෂයෙන්ම මේක කියන්නේ Phone එකෙන් බලනවනම්... 😊</b>\n\n<i>Happy Downloading and Come Again... ❤️</i>")
                 await query.answer(f'හෙලෝ {query.from_user.first_name},\nඔයාගේ Inbox එක බලන්න!', show_alert=True)
@@ -413,7 +414,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             chat_id=query.from_user.id,
             file_id=file_id,
             caption=f_caption,
-            protect_content=True if ident == 'checksubp' else False
+            protect_content=True if ident == 'checksubp' else False,
+            reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton('❤️‍🔥 Please Share and Support ❤️‍🔥', url=f'https://t.me/share/url?url=https://t.me/{temp.U_NAME}')]])
         )
         await client.send_message(chat_id=query.from_user.id, text=f"<b>👋 හෙලෝ {query.from_user.mention},\n\nඔයා Download කරන්නේ x265 File එකක් නම් අනිවාරයෙන්ම ඔයාගේ Device එක x265 Codec එකට Support කරනවද කියලා දැනගෙන Download කරන්න, විශේෂයෙන්ම මේක කියන්නේ Phone එකෙන් බලනවනම්... 😊</b>\n\n<i>Happy Downloading and Come Again... ❤️</i>")
     elif query.data == "pages":
