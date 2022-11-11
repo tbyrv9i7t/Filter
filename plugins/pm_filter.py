@@ -376,13 +376,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     chat_id=query.from_user.id,
                     file_id=file_id,
                     caption=f_caption,
-                    reply_markup=InlineKeyboardMarkup(
-                        [[
-                            InlineKeyboardButton('❤️‍🔥 Please Share and Support ❤️‍🔥', url=f'https://t.me/share/url?url=https://t.me/{temp.U_NAME}')
-                        ]]
-                    ),
                     protect_content=True if ident == "filep" else False 
                 )
+                await message.reply_text(text=f"<b>👋 හෙලෝ {message.from_user.mention},\n\nඔයා Download කරන්නේ x265 File එකක් නම් අනිවාරයෙන්ම ඔයාගේ Device එක x265 Codec එකට Support කරනවද කියලා දැනගෙන Download කරන්න, විශේෂයෙන්ම මේක කියන්නේ Phone එකෙන් බලන අයට... 😊</b>\n\n<i>Happy Downloading and Come Again... ❤️</i>")
                 await query.answer('Check PM, I have sent file in PM!', show_alert=True)
         except UserIsBlocked:
             await query.answer('Unblock the Bot!', show_alert=True)
@@ -417,13 +413,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
             chat_id=query.from_user.id,
             file_id=file_id,
             caption=f_caption,
-            reply_markup=InlineKeyboardMarkup(
-                [[
-                    InlineKeyboardButton('❤️‍🔥 Please Share and Support ❤️‍🔥', url=f'https://t.me/share/url?url=https://t.me/{temp.U_NAME}')
-                ]]
-            ),
             protect_content=True if ident == 'checksubp' else False
         )
+        await message.reply_text(text=f"<b>👋 හෙලෝ {message.from_user.mention},\n\nඔයා Download කරන්නේ x265 File එකක් නම් අනිවාරයෙන්ම ඔයාගේ Device එක x265 Codec එකට Support කරනවද කියලා දැනගෙන Download කරන්න, විශේෂයෙන්ම මේක කියන්නේ Phone එකෙන් බලන අයට... 😊</b>\n\n<i>Happy Downloading and Come Again... ❤️</i>")
     elif query.data == "pages":
         await query.answer()
     elif query.data == "howtodownload":
