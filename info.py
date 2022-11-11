@@ -17,7 +17,6 @@ API_HASH = environ['API_HASH']
 BOT_TOKEN = environ['BOT_TOKEN']
 
 # Bot settings
-CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
 STICKERS = (environ.get('STICKERS', 'CAACAgIAAxkBAAEGUXdjZlg70pKyL3ciahu5T8GL-5tbeAACBQADwDZPE_lqX5qCa011KwQ')).split()
 PICS = (environ.get('PICS', 'https://telegra.ph/file/6cdc6dee747e610adc994.jpg')).split()
