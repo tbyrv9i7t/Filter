@@ -378,7 +378,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     caption=f_caption,
                     protect_content=True if ident == "filep" else False
                 )
-                await query.message.send_text(chat_id=query.from_user.id, text='hii')
+                await client.send_text(chat_id=message.chat.id, text='hii', reply_markup=reply_markup, reply_to_message_id=message.message_id)
                 await query.answer('Check PM, I have sent file in PM!', show_alert=True)
         except UserIsBlocked:
             await query.answer('Unblock the Bot!', show_alert=True)
