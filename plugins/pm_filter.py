@@ -378,7 +378,6 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     caption=f_caption,
                     protect_content=True if ident == "filep" else False
                 )
-                await client.send_sticker(chat_id=message.chat.id, sticker='CAACAgUAAxkBAAJ1k2IfDr7l8Hat1d-s1mnbBEsFXZWJAAL5BAACAdz5VOVw2x38ZZJ1HgQ', reply_markup=reply_markup, reply_to_message_id=message.message_id)
                 await query.answer('Check PM, I have sent file in PM!', show_alert=True)
         except UserIsBlocked:
             await query.answer('Unblock the Bot!', show_alert=True)
