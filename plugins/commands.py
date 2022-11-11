@@ -396,7 +396,7 @@ async def settings(client, message):
             ],
             [
                 InlineKeyboardButton(
-                    'Bot PM',
+                    'Bot Inbox',
                     callback_data=f'setgs#botpm#{settings["botpm"]}#{grp_id}',
                 ),
                 InlineKeyboardButton(
