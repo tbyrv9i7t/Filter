@@ -415,7 +415,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             caption=f_caption,
             protect_content=True if ident == 'checksubp' else False
         )
-        await query.reply_text(text=f"<b>👋 හෙලෝ {query.from_user.mention},\n\nඔයා Download කරන්නේ x265 File එකක් නම් අනිවාරයෙන්ම ඔයාගේ Device එක x265 Codec එකට Support කරනවද කියලා දැනගෙන Download කරන්න, විශේෂයෙන්ම මේක කියන්නේ Phone එකෙන් බලන අයට... 😊</b>\n\n<i>Happy Downloading and Come Again... ❤️</i>")
+        await query.reply(text=f"<b>👋 හෙලෝ {query.from_user.mention},\n\nඔයා Download කරන්නේ x265 File එකක් නම් අනිවාරයෙන්ම ඔයාගේ Device එක x265 Codec එකට Support කරනවද කියලා දැනගෙන Download කරන්න, විශේෂයෙන්ම මේක කියන්නේ Phone එකෙන් බලන අයට... 😊</b>\n\n<i>Happy Downloading and Come Again... ❤️</i>")
     elif query.data == "pages":
         await query.answer()
     elif query.data == "howtodownload":
