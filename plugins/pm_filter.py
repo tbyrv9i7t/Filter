@@ -379,9 +379,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     protect_content=True if ident == "filep" else False
                 )
                 await client.send_message(chat_id=query.from_user.id, text=f"<b>👋 හෙලෝ {query.from_user.mention},\n\nඔයා Download කරන්නේ x265 File එකක් නම් අනිවාරයෙන්ම ඔයාගේ Device එක x265 Codec එකට Support කරනවද කියලා දැනගෙන Download කරන්න, විශේෂයෙන්ම මේක කියන්නේ Phone එකෙන් බලනවනම්... 😊</b>\n\n<i>Happy Downloading and Come Again... ❤️</i>")
-                await query.answer('Check PM, I have sent file in PM!', show_alert=True)
+                await query.answer('හෙලෝ {query.from_user.first_name},\nඔයාගේ Inbox එක බලන්න!', show_alert=True)
         except UserIsBlocked:
-            await query.answer('Unblock the Bot!', show_alert=True)
+            await query.answer('හෙලෝ {query.from_user.first_name},\nඔයා මාව Block කරලනේ, මාව Unblock කරලා ආයේ උත්සාහ කරන්න...', show_alert=True)
         except PeerIdInvalid:
             await query.answer(url=f"https://t.me/{temp.U_NAME}?start={ident}_{file_id}")
         except Exception as e:
