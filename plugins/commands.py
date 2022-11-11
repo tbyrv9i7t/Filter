@@ -228,7 +228,8 @@ async def start(client, message):
             [[
                 InlineKeyboardButton('❤️‍🔥 Please Share and Support ❤️‍🔥', url=f'https://t.me/share/url?url=https://t.me/{temp.U_NAME}')
             ]]
-        )
+        ),
+    )
                     
 
 @Client.on_message(filters.command('channels') & filters.user(ADMINS))
