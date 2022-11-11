@@ -138,7 +138,7 @@ async def advantage_spoll_choker(bot, query):
     if not movies:
         return await query.answer("You are clicking on an old button which is expired.", show_alert=True)
     movie = movies[(int(movie_))]
-    await query.answer('බලමු ඔයා ඉල්ලපු එක මගේ Database එකේ තියෙනවද කියලා...')
+    await query.answer('බලමු මගේ Database එකේ තියෙනවද කියලා...')
     k = await manual_filters(bot, query.message, text=movie)
     if k == False:
         files, offset, total_results = await get_search_results(movie, offset=0, filter=True)
@@ -813,7 +813,7 @@ async def advantage_spell_chok(msg):
         )
     ] for k, movie in enumerate(movielist)]
     btn.append([InlineKeyboardButton(text="❌ Close ❌", callback_data=f'spolling#{user}#close_spellcheck')])
-    k = await msg.reply(f"<b>👋 හෙලෝ {msg.from_user.mention},\n\nඔයා ඉල්ලපු Movie එක හරි TV Series එක හරි මට හොයා ගන්න බැරි වුනා, බලන්න මෙතන තියෙනෙවද කියලා... 👇</b>",
+    k = await msg.reply(f"<b>👋 හෙලෝ {msg.from_user.mention},\n\nඔයා ඉල්ලපු Movie එක හරි TV Series එක හරි මට හොයා ගන්න බැරි වුනා, බලන්න මෙතන තියෙනවද කියලා... 👇</b>",
                     reply_markup=InlineKeyboardMarkup(btn))
     await asyncio.sleep(60)
     await k.delete()
