@@ -33,7 +33,7 @@ SPELL_CHECK = {}
 async def give_filter(client, message):
     k = await manual_filters(client, message)
     if k == False:
-        if settings['auto_ffilter']: else None
+        if settings['auto_ffilter'] else None
         await auto_filter(client, message)
 
 
