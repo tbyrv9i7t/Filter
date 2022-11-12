@@ -448,12 +448,12 @@ async def settings(client, message):
             ],
             [
                 InlineKeyboardButton(
-                    'AutoFilter',
-                    callback_data=f'setgs#autofilter#{settings["autofilter"]}#{grp_id}',
+                    'Auto Filter',
+                    callback_data=f'setgs#auto_filter#{settings["auto_filter"]}#{grp_id}',
                 ),
                 InlineKeyboardButton(
                     '✅ Yes' if settings["autofilter"] else '❌ No',
-                    callback_data=f'setgs#autofilter#{settings["autofilter"]}#{grp_id}',
+                    callback_data=f'setgs#auto_filter#{settings["auto_filter"]}#{grp_id}',
                 ),
             ],
         ]
