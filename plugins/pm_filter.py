@@ -35,6 +35,7 @@ async def give_filter(client, message):
     if k == False:
         if settings['auto_ffilter'] else None
         await auto_filter(client, message)
+    else
 
 
 @Client.on_callback_query(filters.regex(r"^next"))
