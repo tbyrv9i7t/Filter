@@ -34,7 +34,7 @@ async def give_filter(client, message):
     k = await manual_filters(client, message)
     if k == False:
         settings = await get_settings(message.chat.id)
-        await auto_filter(client, message) if settings['auto_ffilter'] else None
+        await auto_filter(client, message) if settings['auto_filter'] else None
 
 
 @Client.on_callback_query(filters.regex(r"^next"))
@@ -632,10 +632,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
                                          callback_data=f'setgs#welcome#{settings["welcome"]}#{str(grp_id)}')
                 ],
                 [
-                    InlineKeyboardButton('AutoFilter',
-                                         callback_data=f'setgs#autofilter#{settings["autofilter"]}#{str(grp_id)}'),
-                    InlineKeyboardButton('✅ Yes' if settings["autofilter"] else '❌ No',
-                                         callback_data=f'setgs#autofilter#{settings["autofilter"]}#{str(grp_id)}')
+                    InlineKeyboardButton('Auto Filter', callback_data=f'setgs#auto_filter#{settings["auto_filter"]}#{str(grp_id)}'),
+                    InlineKeyboardButton('✅ Yes' if settings["auto_filter"] else '❌ No',
+                                         callback_data=f'setgs#auto_filter#{settings["auto_filter"]}#{str(grp_id)}')
                 ]
             ]
             reply_markup = InlineKeyboardMarkup(buttons)
