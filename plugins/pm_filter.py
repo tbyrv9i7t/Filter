@@ -31,15 +31,10 @@ SPELL_CHECK = {}
 
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client, message):
-    settings = await get_settings(message.chat.id)
-    if settings["autofilter"]:
-        k = await manual_filters(client, message)
-        if k == False:
-            await auto_filter(client, message)
-    else:
-        await message.reply_text(
-            text="AUTOFILTER OFF"
-        )
+    k = await manual_filters(client, message)
+    if k == False:
+        if settings['auto_ffilter']: else None
+        await auto_filter(client, message)
 
 
 @Client.on_callback_query(filters.regex(r"^next"))
