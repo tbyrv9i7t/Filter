@@ -452,7 +452,7 @@ async def settings(client, message):
                     callback_data=f'setgs#auto_filter#{settings["auto_filter"]}#{grp_id}',
                 ),
                 InlineKeyboardButton(
-                    '✅ Yes' if settings["autofilter"] else '❌ No',
+                    '✅ Yes' if settings["auto_filter"] else '❌ No',
                     callback_data=f'setgs#auto_filter#{settings["auto_filter"]}#{grp_id}',
                 ),
             ],
