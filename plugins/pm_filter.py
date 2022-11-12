@@ -31,9 +31,15 @@ SPELL_CHECK = {}
 
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client, message):
-    k = await manual_filters(client, message)
-    if k == False:
-        await auto_filter(client, message)
+    settings = await get_settings(message.chat.id)
+    if settings["autofilter"]:
+        k = await manual_filters(client, message)
+        if k == False:
+            await auto_filter(client, message)
+    else:
+        await message.reply_text(
+            text="AUTOFILTER OFF"
+        )
 
 
 @Client.on_callback_query(filters.regex(r"^next"))
@@ -629,6 +635,12 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('Welcome Message', callback_data=f'setgs#welcome#{settings["welcome"]}#{str(grp_id)}'),
                     InlineKeyboardButton('✅ Yes' if settings["welcome"] else '❌ No',
                                          callback_data=f'setgs#welcome#{settings["welcome"]}#{str(grp_id)}')
+                ],
+                [
+                    InlineKeyboardButton('AutoFilter',
+                                         callback_data=f'setgs#autofilter#{settings["autofilter"]}#{str(grp_id)}'),
+                    InlineKeyboardButton('✅ Yes' if settings["autofilter"] else '❌ No',
+                                         callback_data=f'setgs#autofilter#{settings["autofilter"]}#{str(grp_id)}')
                 ]
             ]
             reply_markup = InlineKeyboardMarkup(buttons)
