@@ -771,7 +771,7 @@ async def auto_filter(client, msg, spoll=False):
         await asyncio.sleep(3600)
         await d.delete() if settings['auto_delete'] else None
     if spoll:
-        await spoll.message.delete()
+        await client.message.delete()
 
 
 async def advantage_spell_chok(msg):
