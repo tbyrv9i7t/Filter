@@ -8,7 +8,7 @@ from pyrogram.errors import ChatAdminRequired, FloodWait
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from database.ia_filterdb import Media, get_file_details, unpack_new_file_id
 from database.users_chats_db import db
-from info import CHANNELS, ADMINS, AUTH_CHANNEL, LOG_CHANNEL, STICKERS, PICS, BATCH_FILE_CAPTION, CUSTOM_FILE_CAPTION, PROTECT_CONTENT, AUTOFILTER
+from info import CHANNELS, ADMINS, AUTH_CHANNEL, LOG_CHANNEL, STICKERS, PICS, BATCH_FILE_CAPTION, CUSTOM_FILE_CAPTION, PROTECT_CONTENT
 from utils import get_settings, get_size, is_subscribed, save_group_settings, temp
 from database.connections_mdb import active_connection
 import re
@@ -449,11 +449,11 @@ async def settings(client, message):
             [
                 InlineKeyboardButton(
                     'Auto Filter',
-                    callback_data=f'setgs#auto_filter#{settings["auto_filter"]}#{grp_id}',
+                    callback_data=f'setgs#autofilter#{settings["autofilter"]}#{grp_id}',
                 ),
                 InlineKeyboardButton(
-                    '✅ Yes' if settings["auto_filter"] else '❌ No',
-                    callback_data=f'setgs#auto_filter#{settings["auto_filter"]}#{grp_id}',
+                    '✅ Yes' if settings["autofilter"] else '❌ No',
+                    callback_data=f'setgs#autofilter#{settings["autofilter"]}#{grp_id}',
                 ),
             ],
         ]
