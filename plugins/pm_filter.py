@@ -767,11 +767,12 @@ async def auto_filter(client, msg, spoll=False):
             await asyncio.sleep(3600)
             await c.delete() if settings['auto_delete'] else None
     else:
-        k = await message.reply_photo(photo="https://telegra.ph/file/f1da7639c429a6a0dba80.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
+        d = await message.reply_photo(photo="https://telegra.ph/file/f1da7639c429a6a0dba80.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
         await asyncio.sleep(10)
-        await k.delete() if settings['auto_delete'] else None
-    if spoll:
-        await bot.message.delete()
+        await d.delete() if settings['auto_delete'] else None
+   else:
+       if spoll:
+               await msg.message.delete()
 
 
 async def advantage_spell_chok(msg):
