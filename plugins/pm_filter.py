@@ -751,7 +751,8 @@ async def auto_filter(client, msg, spoll=False):
         cap = f"✅ I Found Your Query: <code>{search}</code>\n\n🗣 Requested by: {message.from_user.mention}\n©️ Powered by: <b>{message.chat.title}</b>"
     if imdb and imdb.get('poster'):
         try:
-            a = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn))
+            a = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
+                                          reply_markup=InlineKeyboardMarkup(btn))
             await asyncio.sleep(3600)
             await a.delete() if settings['auto_delete'] else None
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
@@ -762,11 +763,11 @@ async def auto_filter(client, msg, spoll=False):
             await b.delete() if settings['auto_delete'] else None
         except Exception as e:
             logger.exception(e)
-            c = await message.reply_photo(photo="https://telegra.ph/file/cbcaa5500a0d3cee10d07.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
+            c = await message.reply_photo(photo="https://telegra.ph/file/f1da7639c429a6a0dba80.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
             await asyncio.sleep(3600)
             await c.delete() if settings['auto_delete'] else None
     else:
-        d = await message.reply_photo(photo="https://telegra.ph/file/cbcaa5500a0d3cee10d07.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
+        d = await message.reply_photo(photo="https://telegra.ph/file/f1da7639c429a6a0dba80.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
         await asyncio.sleep(3600)
         await d.delete() if settings['auto_delete'] else None
     if spoll:
