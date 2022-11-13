@@ -456,6 +456,16 @@ async def settings(client, message):
                     callback_data=f'setgs#autofilter#{settings["autofilter"]}#{grp_id}',
                 ),
             ],
+            [
+                InlineKeyboardButton(
+                    'Auto Delete',
+                    callback_data=f'setgs#auto_delete#{settings["auto_delete"]}#{grp_id}',
+                ),
+                InlineKeyboardButton(
+                    '✅ Yes' if settings["auto_delete"] else '❌ No',
+                    callback_data=f'setgs#auto_delete#{settings["auto_delete"]}#{grp_id}',
+                ),
+            ],
         ]
 
         reply_markup = InlineKeyboardMarkup(buttons)
