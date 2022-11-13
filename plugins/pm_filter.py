@@ -751,27 +751,30 @@ async def auto_filter(client, msg, spoll=False):
         cap = f"✅ I Found Your Query: <code>{search}</code>\n\n🗣 Requested by: {message.from_user.mention}\n©️ Powered by: <b>{message.chat.title}</b>"
     if imdb and imdb.get('poster'):
         try:
-            k = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
-                                          reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(3600)
-            await k.delete() if settings['auto_delete'] else None
+            hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024], reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
+            await asyncio.sleep(36000)
+            await hehe.delete()
+            await message.delete()
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
             pic = imdb.get('poster')
             poster = pic.replace('.jpg', "._V1_UX360.jpg")
-            k = await message.reply_photo(photo=poster, caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(3600)
-            await k.delete() if settings['auto_delete'] else None
+            hmm = await message.reply_photo(photo=poster, caption=cap[:1024], reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
+            await asyncio.sleep(36000)
+            await hmm.delete()
+            await message.delete()
         except Exception as e:
             logger.exception(e)
-            k = await message.reply_photo(photo="https://telegra.ph/file/f1da7639c429a6a0dba80.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(3600)
-            await k.delete() if settings['auto_delete'] else None
+            fek = await message.reply_photo(photo="https://telegra.ph/file/82b5bbbab6d5e5593b6b2.jpg", caption=cap, reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
+            await asyncio.sleep(36000)
+            await fek.delete()
+            await msg.delete()
     else:
-        k = await message.reply_photo(photo="https://telegra.ph/file/f1da7639c429a6a0dba80.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-        await asyncio.sleep(3600)
-        await k.delete() if settings['auto_delete'] else None
+        fuk = await message.reply_photo(photo="https://telegra.ph/file/8b42f6caf6ef5fd76766f.jpg", caption=cap, reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
+        await asyncio.sleep(36000)
+        await fuk.delete()
+        await msg.delete()
     if spoll:
-            await msg.message.delete()
+        await msg.message.delete()
 
 
 async def advantage_spell_chok(msg):
