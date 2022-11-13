@@ -635,7 +635,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('Auto Filter', callback_data=f'setgs#autofilter#{settings["autofilter"]}#{str(grp_id)}'),
                     InlineKeyboardButton('✅ Yes' if settings["autofilter"] else '❌ No',
                                          callback_data=f'setgs#autofilter#{settings["autofilter"]}#{str(grp_id)}')
-                ]
+                ],
                 [
                     InlineKeyboardButton('Auto Delete', callback_data=f'setgs#auto_delete#{settings["auto_delete"]}#{str(grp_id)}'),
                     InlineKeyboardButton('✅ Yes' if settings["auto_delete"] else '❌ No',
