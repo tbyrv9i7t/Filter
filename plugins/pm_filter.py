@@ -7,7 +7,7 @@ from Script import script
 import pyrogram
 from database.connections_mdb import active_connection, all_connections, delete_connection, if_active, make_active, \
     make_inactive
-from info import ADMINS, AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, AUTH_GROUPS, P_TTI_SHOW_OFF, IMDB, AUTOFILTER, \
+from info import ADMINS, AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, AUTH_GROUPS, P_TTI_SHOW_OFF, IMDB, AUTOFILTER, AUTO_DELETE, \
     SINGLE_BUTTON, SPELL_CHECK_REPLY, IMDB_TEMPLATE
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters, enums
@@ -636,6 +636,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     InlineKeyboardButton('✅ Yes' if settings["autofilter"] else '❌ No',
                                          callback_data=f'setgs#autofilter#{settings["autofilter"]}#{str(grp_id)}')
                 ]
+                [
+                    InlineKeyboardButton('Auto Delete', callback_data=f'setgs#auto_delete#{settings["auto_delete"]}#{str(grp_id)}'),
+                    InlineKeyboardButton('✅ Yes' if settings["auto_delete"] else '❌ No',
+                                         callback_data=f'setgs#auto_delete#{settings["auto_delete"]}#{str(grp_id)}')
+                ]
             ]
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_reply_markup(reply_markup)
@@ -746,8 +751,9 @@ async def auto_filter(client, msg, spoll=False):
         cap = f"✅ I Found Your Query: <code>{search}</code>\n\n🗣 Requested by: {message.from_user.mention}\n©️ Powered by: <b>{message.chat.title}</b>"
     if imdb and imdb.get('poster'):
         try:
-            await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
-                                      reply_markup=InlineKeyboardMarkup(btn))
+            a = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn))
+            await asyncio.sleep(10) if settings['auto_delete'] else None
+            await a.delete()
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
             pic = imdb.get('poster')
             poster = pic.replace('.jpg', "._V1_UX360.jpg")
@@ -756,7 +762,9 @@ async def auto_filter(client, msg, spoll=False):
             logger.exception(e)
             await message.reply_photo(photo="https://telegra.ph/file/cbcaa5500a0d3cee10d07.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
     else:
-        await message.reply_photo(photo="https://telegra.ph/file/cbcaa5500a0d3cee10d07.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
+        b = await message.reply_photo(photo="https://telegra.ph/file/cbcaa5500a0d3cee10d07.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
+        await asyncio.sleep(10) if settings['auto_delete'] else None
+        await b.delete()
     if spoll:
         await msg.message.delete()
 
