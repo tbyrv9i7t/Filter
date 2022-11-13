@@ -771,7 +771,7 @@ async def auto_filter(client, msg, spoll=False):
     else:
         fuk = await message.reply_photo(photo="https://telegra.ph/file/8b42f6caf6ef5fd76766f.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
 
-    if spoll:
+    else spoll:
         await msg.message.delete()
 
 
