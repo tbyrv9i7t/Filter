@@ -79,7 +79,7 @@ class script(object):
 ★ Free Storage: <code>{}</code>"""
 
     LOG_TEXT_G = """#NewGroup
-Group: {}
+Title: {}
 ID: <code>{}</code>
 Total Members: {}
 Added by: {}"""
