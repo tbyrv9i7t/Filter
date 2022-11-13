@@ -762,9 +762,8 @@ async def auto_filter(client, msg, spoll=False):
             await message.reply_photo(photo="https://telegra.ph/file/cbcaa5500a0d3cee10d07.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
     else:
         b = await message.reply_photo(photo="https://telegra.ph/file/cbcaa5500a0d3cee10d07.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-        if settings['auto_delete'] else None
         await asyncio.sleep(10)
-        await b.delete()
+        await b.delete() if settings['auto_delete'] else None
     if spoll:
         await msg.message.delete()
 
