@@ -768,12 +768,11 @@ async def auto_filter(client, msg, spoll=False):
             await k.delete() if settings['auto_delete'] else None
     else:
         fuk = await message.reply_photo(photo="https://telegra.ph/file/f1da7639c429a6a0dba80.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-      
-                    await asyncio.sleep(600)
-                    await fuk.delete()
-                    await message.delete()
-      if spoll:
-             await msg.message.delete()
+              await asyncio.sleep(600)
+              await fuk.delete()
+              await message.delete()
+    if spoll:
+              await msg.message.delete()
 
 
 async def advantage_spell_chok(msg):
