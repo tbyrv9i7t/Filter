@@ -753,22 +753,22 @@ async def auto_filter(client, msg, spoll=False):
         try:
             k = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
                                           reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(3600)
+            await asyncio.sleep(10)
             await k.delete() if settings['auto_delete'] else None
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
             pic = imdb.get('poster')
             poster = pic.replace('.jpg', "._V1_UX360.jpg")
             k = await message.reply_photo(photo=poster, caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(3600)
+            await asyncio.sleep(10)
             await k.delete() if settings['auto_delete'] else None
         except Exception as e:
             logger.exception(e)
             k = await message.reply_photo(photo="https://telegra.ph/file/f1da7639c429a6a0dba80.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-            await asyncio.sleep(3600)
+            await asyncio.sleep(10)
             await k.delete() if settings['auto_delete'] else None
     else:
         k = await message.reply_photo(photo="https://telegra.ph/file/f1da7639c429a6a0dba80.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
-        await asyncio.sleep(3600)
+        await asyncio.sleep(10)
         await k.delete() if settings['auto_delete'] else None
     if spoll:
         await msg.message.delete()
