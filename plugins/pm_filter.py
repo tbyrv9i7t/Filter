@@ -133,7 +133,7 @@ async def advantage_spoll_choker(bot, query):
     _, user, movie_ = query.data.split('#')
     if int(user) != 0 and query.from_user.id != int(user):
         return await query.answer(f"හෙලෝ {query.from_user.first_name},\nඅනුන්ගේ ඒවා ඔබන්න එපා!", show_alert=True)
-    if movie_ == "close_spellcheck":
+    if movie_ == "close_spell_check":
         return await query.message.delete()
     movies = SPELL_CHECK.get(query.message.reply_to_message.id)
     if not movies:
@@ -770,14 +770,8 @@ async def auto_filter(client, msg, spoll=False):
         k = await message.reply_photo(photo="https://telegra.ph/file/f1da7639c429a6a0dba80.jpg", caption=cap, reply_markup=InlineKeyboardMarkup(btn))
         await asyncio.sleep(3600)
         await k.delete() if settings['auto_delete'] else None
-        
-        try:
-            
-
-
-
-           if spoll:
-                    await msg.message.delete()
+    if spoll:
+           await msg.message.delete()
 
 
 async def advantage_spell_chok(msg):
