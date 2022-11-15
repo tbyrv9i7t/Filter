@@ -36,7 +36,7 @@ async def save_group(bot, message):
             await bot.leave_chat(message.chat.id)
             return
         await message.reply_text(
-            text=f"Thankyou for adding me in <b>{message.chat.title},</b> Don't forget to make me admin.")
+            text=f"hello {message.from_user.mention} Thankyou for adding me in <b>{message.chat.title},</b> Don't forget to make me admin.")
     else:
         settings = await get_settings(message.chat.id)
         if settings["welcome"]:
